@@ -1,4 +1,5 @@
 const express = require("express");
+const cors = require("cors");
 
 const { connect } = require("./db");
 const routes = require("./routes");
@@ -9,6 +10,7 @@ const app = express();
 
 connect();
 
+app.use(cors());
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
